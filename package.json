@@ -1,0 +1,25 @@
+{
+  "name": "friend_finder_app",
+  "version": "1.0.0",
+  "description": "eHarmony clone based on music tastes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aotolbert/friend_finder_app.git"
+  },
+  "keywords": [
+    "Music",
+    "express",
+    "node",
+    "friend"
+  ],
+  "author": "Adam Tolbert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aotolbert/friend_finder_app/issues"
+  },
+  "homepage": "https://github.com/aotolbert/friend_finder_app#readme"
+}
