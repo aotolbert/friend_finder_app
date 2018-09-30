@@ -20,6 +20,16 @@ var people = [
         name: "Paul McCartney",
         image: "https://e.snmc.io/i/300/s/684f84f7fb8ecebe866b2f9496d4350f/1188523",
         scores: [5, 1, 3, 1, 4, 1, 2, 4, 2, 1]
+    },
+    {
+        name: "Carlos Santana",
+        image: "http://forguitarplayersonly.com/wp-content/uploads/Santana.jpg",
+        scores: [5, 3, 1, 4, 5, 1, 4, 5, 1, 4]
+    },
+    {
+        name: "Kendrick Lamar",
+        image: "http://www.godisinthetvzine.co.uk/wp-content/uploads/2017/10/tde-holiday-collection-2016-kendrick-lamar.jpg",
+        scores: [1, 1, 4, 2, 3, 5, 5, 2, 5, 5]
     }
 ];
 

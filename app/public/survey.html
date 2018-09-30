@@ -128,7 +128,12 @@
                     </select>
                 </div>
 
-            <a href="/match"><button class="btn btn-danger btn-lg" id="submitdata"><span class="fa fa-eye"></span> Submit Data</button></a>
+            <button class="btn btn-danger btn-lg mb-5" id="submitdata"><span class="fa fa-eye"></span> Submit Data</button>
+            <button class="btn btn-danger btn-lg mb-5" id="seedatabase"><span class="fa fa-eye"></span> See Database</button>
+
+            <br>
+
+            <div id="dumpsite"></div>
 
         </form>
 
@@ -143,9 +148,15 @@
         <script type="text/javascript">
 
             $("#submitdata").on("click", function(instance) {
-            instance.preventDefault();
+                instance.preventDefault();
                 storeData();
             });
+
+            $("#seedatabase").on("click", function(instance) {
+                instance.preventDefault();
+                 seeDB();
+            });
+
             
             function storeData(event) {
 
@@ -176,6 +187,31 @@
                 });
             };
 
+            function seeDB(event) {
+                $("#dumpsite").empty();
+                $.get("/survey/people", function (data) {
+                    console.log(data);
+                    if (data) {
+                        for (i=0; i<data.length; i++) {
+                            
+                            var newrow = $("<div>").addClass("container");
+            
+                            (newrow).html('<div class="row mb-2 mt-5 shadow-lg p-3 mb-5 rounded divColor"><div class="col-sm-6"><img src="' + (data[i].image) + '" class="img-fluid"></div><div class="col-sm-2></div><div class="col-sm-4"><h4>Name:<br> ' + data[i].name + '</h4></div></div>')
+                                
+                            $("#dumpsite").prepend(newrow);
+
+                        };
+                    } if (data.length === 0) {
+                        var newrow = $("<div>").addClass("container");
+            
+                        (newrow).html('<div class="row mb-3 shadow-lg p-3 mb-5 rounded divColor"><div class="col-sm-7"><img src="https://cdn.pixabay.com/photo/2016/04/24/13/24/error-1349562__340.png" class="img-fluid"></div><div class="col-sm-1></div><div class="col-sm-4"><h4>Database has been wiped or cannot be found.</h4></div></div>')
+                
+                        $("#dumpsite").prepend(newrow);
+                        }
+                });
+
+               
+            };
 
         </script>
 </body>
