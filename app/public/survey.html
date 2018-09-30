@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <script src="https://code.jquery.com/jquery.js"></script>
     <title>Friend Finder Survey</title>
 </head>
 <body>
@@ -30,93 +30,103 @@
             <div class="form-group mt-5 mb-5">
                 <label for="question1">I can have been known to say things like "they don't make music like they did in the 70s anymore"</label>
                 <select class="form-control" id="question1">
-                    <option>1 (Strongly Disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option>5</option>
                 </select>
             </div>
             <div class="form-group mt-5 mb-5">
                 <label for="question2">Jimmy Buffet is one of the greatest songwriters of all time</label>
                 <select class="form-control" id="question2">
-                    <option>1 (Strongly Disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option>5</option>
                 </select>
             </div>
             <div class="form-group mt-5 mb-5">
                 <label for="question3">I find myself listening to electronic music more and more these days</label>
                 <select class="form-control" id="question3">
-                    <option>1 (Strongly Disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option>5</option>
                 </select>
             </div>
             <div class="form-group mt-5 mb-5">
                 <label for="question4">I would much prefer an intimate concert venue with a local artist than a mega-stacium and a huge pop star</label>
                 <select class="form-control" id="question4">
-                    <option>1 (Strongly Disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option>5</option>
                 </select>
             </div>
             <div class="form-group mt-5 mb-5">
                 <label for="question5">I can name more than 5 classical composrs</label>
                 <select class="form-control" id="question5">
-                    <option>1 (Strongly Disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option>5</option>
                 </select>
             </div>
             <div class="form-group mt-5 mb-5">
                 <label for="question6">I prefer Rap and/or Hip-Hop over Classic Rock</label>
                 <select class="form-control" id="question6">
-                    <option>1 (Strongly Disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option>5</option>
                 </select>
             </div>
             <div class="form-group mt-5 mb-5">
                 <label for="question7">I prefer Reagae over Jazz</label>
                 <select class="form-control" id="question7">
-                    <option>1 (Strongly Disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option>5</option>
                 </select>
             </div>
             <div class="form-group mt-5 mb-5">
                 <label for="question8">I love going to concerts and feel like you can't really truely appreciate an atrist until you've heard them live</label>
                 <select class="form-control" id="question8">
-                    <option>1 (Strongly Disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option>5</option>
                 </select>
             </div>
             <div class="form-group mt-5 mb-5">
                 <label for="question9">I prefer Spotify to Apple Music</label>
                 <select class="form-control" id="question9">
-                    <option>1 (Strongly Disagree)</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option>5</option>
                 </select>
             </div>
+            <div class="form-group mt-5 mb-5">
+                    <label for="question10">The Beatles did more for Rock and Roll music than The Rolling Stones did</label>
+                    <select class="form-control" id="question10">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
 
             <a href="/match"><button class="btn btn-danger btn-lg" id="submitdata"><span class="fa fa-eye"></span> Submit Data</button></a>
 
@@ -129,11 +139,8 @@
 
 
     
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        
-        <script>
+
+        <script type="text/javascript">
 
             $("#submitdata").on("click", function(instance) {
             instance.preventDefault();
@@ -141,9 +148,32 @@
             });
             
             function storeData(event) {
-                console.log($("#question1").val());
+
                 console.log($("#question2").val());
 
+
+                var newPerson = {
+                name: $("#username").val().trim(),
+                image: $("#imageurl").val().trim(),
+                scores: [
+                    parseFloat($("#question1").val()),
+                    parseFloat($("#question2").val()),
+                    parseFloat($("#question3").val()),
+                    parseFloat($("#question4").val()),
+                    parseFloat($("#question5").val()),
+                    parseFloat($("#question6").val()),
+                    parseFloat($("#question7").val()),
+                    parseFloat($("#question8").val()),
+                    parseFloat($("#question9").val()),
+                    parseFloat($("#question10").val())
+                ]
+                    };
+                
+                $.post("/survey/add", newPerson)
+                .then(function(data) {
+                console.log("data/friends.js", data);
+                alert("Successfully placed into the iHarmony Database!!");
+                });
             };
 
 
