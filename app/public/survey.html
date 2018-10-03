@@ -132,6 +132,8 @@
 
             <button class="btn btn-danger btn-lg mb-5" id="submitdata"><span class="fa fa-eye"></span> Submit Data</button>
             <button class="btn btn-danger btn-lg mb-5" id="seedatabase"><span class="fa fa-eye"></span> See Database</button>
+            <button class="btn btn-danger btn-lg mb-5" id="comparescores"><span class="fa fa-eye"></span> Compare Results</button>
+
 
             <br>
 
@@ -158,6 +160,13 @@
                 instance.preventDefault();
                  seeDB();
             });
+
+            $("#comparescores").on("click", function(instance) {
+                instance.preventDefault();
+                compareDB();
+            });
+
+
 
             
             function storeData(event) {
@@ -213,6 +222,77 @@
                 });
 
                
+            };
+
+
+            function compareDB() {
+                var newScores = {
+                name: $("#username").val().trim(),
+                image: $("#imageurl").val().trim(),
+                scores: [
+                    parseFloat($("#question1").val()),
+                    parseFloat($("#question2").val()),
+                    parseFloat($("#question3").val()),
+                    parseFloat($("#question4").val()),
+                    parseFloat($("#question5").val()),
+                    parseFloat($("#question6").val()),
+                    parseFloat($("#question7").val()),
+                    parseFloat($("#question8").val()),
+                    parseFloat($("#question9").val()),
+                    parseFloat($("#question10").val())
+                    ]
+                };
+
+                $.get('/survey/people', function(data) {
+                    var match;
+                    let difference = 50;
+
+                    for (i=0; i<data.length; i++) {
+                        var newDiff = 0;
+                        for (k=0; k<10; k++) {
+                            newDiff = newDiff + Math.abs((data[i].scores[k] - newScores.scores[k])) ;
+                            }
+                            if (newDiff < difference) {
+                                difference = newDiff;
+                                match = data[i];
+                        };
+                        console.log("newDiff" + newDiff);
+                        console.log("difference" + difference)
+                    };
+                    console.log(match);
+                    console.log(match.name);
+
+
+            var matchDivUser = $("<div>").addClass("container");
+            
+            // (matchDivUser).html('<div class="row mb-2 mt-5 shadow-lg p-3 mb-5 rounded divColor"><div class="col-sm-6"><img src="' + (newScores.image) + '" class="img-fluid"></div><div class="col-sm-2></div><div class="col-sm-4"><h4>Name:<br> ' + newScores.name + '</h4></div></div>')
+                (matchDivUser).html(`<div class="row mb-2 mt-5 shadow-lg p-3 mb-5 rounded divColor">
+                
+                    <div class="col-sm-4">
+                        <h2> You: </h2>
+                        <img src="${newScores.image}" class="img-fluid">
+                    </div>
+                    
+
+                    <div class="col-sm-3" ml-auto mr-auto>
+                        <h2> Have <br> Matched <br> With...</h2>
+                    </div>
+                    
+                    
+                    <div class="col-sm-4">
+                        <h2> ${match.name} </h2>
+                        <img src="${match.image}" class="img-fluid">
+
+                    </div>
+                
+                </div>`)
+
+            $("#dumpsite").prepend(matchDivUser);
+            
+
+                });
+
+
             };
 
         </script>
