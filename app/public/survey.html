@@ -134,6 +134,7 @@
             <button class="btn btn-success btn-lg mb-5" id="comparescores"><span class="fa fa-eye"></span> Find your iHarmony Match!</button>
             <button class="btn btn-secondary btn-sm mb-5" id="submitdata"><span class="fa fa-eye"></span> Put Yourself in the Database</button>
             <button class="btn btn-secondary btn-sm mb-5" id="seedatabase"><span class="fa fa-eye"></span> See Database</button>
+            <button class="btn btn-secondary btn-sm mb-5" id="cleardata"><span class="fa fa-eye"></span> Reset Database</button>
 
 
             <br>
@@ -165,6 +166,10 @@
             $("#comparescores").on("click", function(instance) {
                 instance.preventDefault();
                 compareDB();
+            });
+
+            $("#cleardata").on("click", function(instance) {
+                $.post("/survey/clear")
             });
 
 
